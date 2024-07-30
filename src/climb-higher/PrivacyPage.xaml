@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.PrivacyPage" BackgroundColor="{StaticResource lightColor}">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Border Style="{StaticResource topBorder}" HeightRequest="150">
+                <VerticalStackLayout Style="{StaticResource topVertSpacing}">
+                    <Label Text="Privacy Notice" Style="{StaticResource topBigText}"/>
+                    <Label Text="Learn about how your data is processed and stored" Style="{StaticResource topSmallText}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource statLabels}" Margin="-10,20,0,10" BackgroundColor="{DynamicResource secColor}">
+                <VerticalStackLayout HorizontalOptions="End" Margin="0,0,10,0" VerticalOptions="Center">
+                    <Label Text="Data Storage" Style="{StaticResource topSmallText}"  FontSize="17" VerticalOptions="Center" TextColor="{DynamicResource tempQuad}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Label Style="{StaticResource privacyLabel}" x:Name="dataStorageLabel"/>
+
+            <Border Style="{StaticResource statLabels}"  Margin="0,20,-10,10" HorizontalOptions="End" BackgroundColor="{DynamicResource secColor}">
+                <VerticalStackLayout HorizontalOptions="Start" Margin="10,0,00,0">
+                    <Label Text="Data Retention" Style="{StaticResource topSmallText}" FontSize="17" VerticalOptions="Center" TextColor="{DynamicResource tempQuad}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Label Style="{StaticResource privacyLabel}" x:Name="dataRetentionLabel"/>
+
+            <Border Style="{StaticResource statLabels}" Margin="-10,20,0,10" BackgroundColor="{DynamicResource secColor}">
+                <VerticalStackLayout HorizontalOptions="End" Margin="0,0,10,0" VerticalOptions="Center">
+                    <Label Text="Data Processing" Style="{StaticResource topSmallText}"  FontSize="17" VerticalOptions="Center" TextColor="{DynamicResource tempQuad}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Label Style="{StaticResource privacyLabel}" x:Name="dataProcessingLabel"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

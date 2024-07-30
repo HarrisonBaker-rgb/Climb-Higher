@@ -1,0 +1,22 @@
+﻿<BindingAssembly>
+	<NativeReference Name="libcvextern_catalyst_x86_64.a">
+		<ForceLoad>True</ForceLoad>
+		<Frameworks>Foundation Accelerate CoreFoundation CoreGraphics AssetsLibrary AVFoundation CoreImage CoreMedia CoreVideo QuartzCore ImageIO UIKit CoreText</Frameworks>
+		<IsCxx>True</IsCxx>
+		<Kind>Static</Kind>
+		<LinkerFlags>-stdlib=libc++ -ObjC -lc++</LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<SmartLink>True</SmartLink>
+		<WeakFrameworks></WeakFrameworks>
+	</NativeReference>
+	<NativeReference Name="libcvextern_catalyst_arm64.a">
+		<ForceLoad>True</ForceLoad>
+		<Frameworks>Foundation Accelerate CoreFoundation CoreGraphics AssetsLibrary AVFoundation CoreImage CoreMedia CoreVideo QuartzCore ImageIO UIKit CoreText</Frameworks>
+		<IsCxx>True</IsCxx>
+		<Kind>Static</Kind>
+		<LinkerFlags>-stdlib=libc++ -ObjC -lc++</LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<SmartLink>True</SmartLink>
+		<WeakFrameworks></WeakFrameworks>
+	</NativeReference>
+</BindingAssembly>

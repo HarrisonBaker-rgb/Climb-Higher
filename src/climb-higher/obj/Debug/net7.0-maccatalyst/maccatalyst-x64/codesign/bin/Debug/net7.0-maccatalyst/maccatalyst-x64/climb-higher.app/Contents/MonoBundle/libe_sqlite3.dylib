@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/harrisonbaker/Desktop/climb-higher/src/climb-higher/bin/Debug/net7.0-maccatalyst/maccatalyst-x64/climb-higher.app/Contents/MonoBundle/libe_sqlite3.dylib

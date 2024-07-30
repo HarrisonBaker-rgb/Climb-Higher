@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.StatisticsPage" BackgroundColor="{StaticResource lightColor}" >
+    <ScrollView>
+        <VerticalStackLayout Padding="-10">
+            <Border Style="{StaticResource topBorder}" HeightRequest="150">
+                <VerticalStackLayout Style="{StaticResource topVertSpacing}">
+                    <Label Text="Statistics" Style="{StaticResource topBigText}"/>
+                    <Label Text="Learn more about your climbs" Style="{StaticResource topSmallText}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource statLabels}" Margin="-10,20,0,10" BackgroundColor="{DynamicResource secColor}">
+                <VerticalStackLayout HorizontalOptions="End" Margin="0,0,10,0" VerticalOptions="Center">
+                    <Label Text="Bouldering" Style="{StaticResource topSmallText}"  FontSize="17" VerticalOptions="Center" TextColor="{DynamicResource tempQuad}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border x:Name="bBorder" Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" BackgroundColor="{DynamicResource triColor}" HeightRequest="120">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Margin="20,10,0,0" Spacing="10">
+                        <Label Text="Total Climbs:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                        <Label x:Name="bTotalClimbs" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="20,0,0,0" Spacing="10">
+                        <Label Text="Average Time:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                        <Label x:Name="bAvgClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <Label Text="" FontSize="5"/>
+                    <Grid WidthRequest="350" RowSpacing="10" HorizontalOptions="CenterAndExpand" Margin="10,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
+                            <Label Text="Best:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                            <Label x:Name="bBestClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+                            <Label Text="Worst:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                            <Label x:Name="bWorstClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+                        </HorizontalStackLayout>
+                        <ListView x:Name="bAboutBestClimb" ItemsSource="{Binding boulderBest}" ItemSelected="getMoreInformation" Grid.Row="1" Grid.Column="0" Style="{StaticResource statList}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding .}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView x:Name="bAboutWorstClimb" ItemsSource="{Binding boulderWorst}" ItemSelected="getMoreInformation" Grid.Row="1" Grid.Column="1" Style="{StaticResource statList}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding .}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource statLabels}"  Margin="0,20,-10,10" HorizontalOptions="End" BackgroundColor="{DynamicResource secColor}">
+                <VerticalStackLayout HorizontalOptions="Start" Margin="10,0,00,0">
+                    <Label Text="Top Rope" Style="{StaticResource topSmallText}" FontSize="17" VerticalOptions="Center" TextColor="{DynamicResource tempQuad}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border x:Name="trBorder" Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" BackgroundColor="{DynamicResource triColor}" HeightRequest="120">
+                <VerticalStackLayout>
+            <HorizontalStackLayout Margin="20,10,0,0" Spacing="10">
+                <Label Text="Total Climbs:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                <Label x:Name="trTotalClimbs" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="20,0,0,0" Spacing="10">
+                <Label Text="Average Time:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                <Label x:Name="trAvgClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+            </HorizontalStackLayout>
+            <Grid WidthRequest="350" HorizontalOptions="CenterAndExpand" Margin="10,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
+                    <Label Text="Best:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                    <Label x:Name="trBestClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+                    <Label Text="Worst:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                    <Label x:Name="trWorstClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+                </HorizontalStackLayout>
+                <ListView x:Name="trAboutBestClimb" ItemsSource="{Binding topropeBest}" ItemSelected="getMoreInformation" Grid.Row="2" Grid.Column="0" Style="{StaticResource statList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding .}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="trAboutWorstClimb" ItemsSource="{Binding topropeWorst}" ItemSelected="getMoreInformation" Grid.Row="2" Grid.Column="1" Style="{StaticResource statList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding .}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+            <Border Style="{StaticResource statLabels}"  Margin="-10,20,0,10" HorizontalOptions="Start" BackgroundColor="{DynamicResource secColor}">
+                <VerticalStackLayout HorizontalOptions="End" Margin="0,0,10,0">
+                    <Label Text="Lead" Style="{StaticResource topSmallText}" FontSize="17" VerticalOptions="Center" TextColor="{DynamicResource tempQuad}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border x:Name="lBorder" Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" BackgroundColor="{DynamicResource triColor}" HeightRequest="120">
+                <VerticalStackLayout>
+            <HorizontalStackLayout Margin="20,10,0,0" Spacing="10">
+                <Label Text="Total Climbs:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                <Label x:Name="lTotalClimbs" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="20,0,0,0" Spacing="10">
+                <Label Text="Average Time:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                <Label x:Name="lAvgClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+            </HorizontalStackLayout>
+            <Grid WidthRequest="350" HorizontalOptions="CenterAndExpand" Margin="10,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
+                    <Label Text="Best:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}"/>
+                    <Label x:Name="lBestClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+                    <Label Text="Worst:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" Grid.Row="0" Grid.Column="1"/>
+                    <Label x:Name="lWorstClimb" Style="{StaticResource climbLabel}" TextColor="{DynamicResource darkColor}" Grid.Row="1" Grid.Column="1"/>
+                </HorizontalStackLayout>
+                <ListView x:Name="lAboutBestClimb" ItemsSource="{Binding leadBest}" ItemSelected="getMoreInformation" Grid.Row="2" Grid.Column="0" Style="{StaticResource statList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding .}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="lAboutWorstClimb" ItemsSource="{Binding leadWorst}" ItemSelected="getMoreInformation" Grid.Row="2" Grid.Column="1" Style="{StaticResource statList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding .}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+                    </VerticalStackLayout>
+                </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

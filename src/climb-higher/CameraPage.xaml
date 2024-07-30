@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.CameraPage" BackgroundColor="{StaticResource lightColor}">
+    <ScrollView>
+        <VerticalStackLayout Padding="-10" Style="{StaticResource vertStyle}">
+            <Border Style="{StaticResource topBorder}">
+                <VerticalStackLayout Style="{StaticResource topVertSpacing}">
+                    <Label Text="Ready to find holds?" Style="{StaticResource topSmallText}"/>
+                    <Label Text="Scan a picture" Style="{StaticResource topBigText}"/>
+                    <Label Text="Take a new picture or upload from your camera roll" Style="{StaticResource topSmallText}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout x:Name="twoButton" IsVisible="true">
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="370" Margin="0,20,0,20" BackgroundColor="{DynamicResource triColor}" HeightRequest="140">
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Grid RowSpacing="0" ColumnSpacing="30" HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{StaticResource borderShadow}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10,10,10,10"/>
+                                </Border.StrokeShape>
+                                <StackLayout>
+                                    <ImageButton Source="camera_upload.svg" Clicked="Camera_Button_Clicked" WidthRequest="80" HeightRequest="80" CornerRadius="10" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="New Picture" FontSize="15" FontFamily="poppins_medium" FontAttributes="Bold" TextColor="{DynamicResource darkColor}" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Border>
+                            <Border Grid.Column="1" Style="{StaticResource borderShadow}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10,10,10,10"/>
+                                </Border.StrokeShape>
+                                <StackLayout>
+                                    <ImageButton Source="camera_roll_upload" Clicked= "Pick_Button_Clicked" WidthRequest="80" HeightRequest="80" CornerRadius="10" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="Camera Roll" FontSize="15" FontFamily="poppins_medium" FontAttributes="Bold" TextColor="{DynamicResource darkColor}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Border>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout x:Name="oneButton" IsVisible="false">
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="370" Margin="0,30,0,30" BackgroundColor="{DynamicResource triColor}" HeightRequest="70">
+                    <Button x:Name="closePicture" Text="Close Picture" WidthRequest="350" HeightRequest="50" FontSize="15" FontFamily="poppins_medium" BackgroundColor="{StaticResource White}" TextColor="#000000"/>
+                </Border>
+            </VerticalStackLayout>
+
+            <Image x:Name="DisplayPhoto">
+                <Image.GestureRecognizers>
+                    <PinchGestureRecognizer PinchUpdated="PinchUpdated"/>
+                    <TapGestureRecognizer Tapped="OnImgTap"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <BoxView x:Name="box" Color="{DynamicResource darkColor}" HeightRequest="50" WidthRequest="50" IsVisible="false"/>
+            <VerticalStackLayout x:Name="belowImageLayout" IsVisible="false">
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="CenterAndExpand" WidthRequest="370" Margin="0,20,0,10" HeightRequest="70" BackgroundColor="{DynamicResource triColor}">
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" HeightRequest="50" Margin="15,0,10,0">
+                        <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="DESIRED COLOR" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="poppins_medium" FontAttributes="Bold" FontSize="17"/>
+                                <!--<Label Text="COLOR" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="poppins_medium" FontAttributes="Bold" FontSize="15"/>-->
+                            </VerticalStackLayout>
+                        <BoxView x:Name="tappedColorBox" Color="Black" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" CornerRadius="50"/>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="CenterAndExpand" WidthRequest="370" Margin="0,0,0,10" HeightRequest="220" BackgroundColor="{DynamicResource triColor}">
+                    <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" HeightRequest="50" Margin="15,0,10,5">
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="LOWER BOUND" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="poppins_medium" FontAttributes="Bold" FontSize="17"/>
+                            </VerticalStackLayout>
+                            <BoxView x:Name="lowerBoundaryBox" Color="Black" HeightRequest="50" WidthRequest="50" CornerRadius="50"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Margin="10,0,10,0">
+                            <Label Text="Red" FontFamily="poppins_medium" />
+                            <Slider x:Name="lowerRedSlider" Minimum="0" Maximum="255" WidthRequest="300" DragCompleted="Slider_DragCompleted" ThumbColor="Red" MinimumTrackColor="Red"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Margin="10,0,10,0">
+                            <Label Text="Green" FontFamily="poppins_medium"/>
+                            <Slider x:Name="lowerGreenSlider" Minimum="0" Maximum="255" WidthRequest="300" DragCompleted="Slider_DragCompleted" ThumbColor="Green" MinimumTrackColor="Green"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Margin="10,0,10,0">
+                            <Label Text="Blue" FontFamily="poppins_medium"/>
+                            <Slider x:Name="lowerBlueSlider" Minimum="0" Maximum="255" WidthRequest="300" DragCompleted="Slider_DragCompleted" ThumbColor="Blue" MinimumTrackColor="Blue"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="CenterAndExpand" WidthRequest="370" Margin="0,0,0,20" HeightRequest="220" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" HeightRequest="50" Margin="15,0,10,5">
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="UPPER BOUND" VerticalOptions="Center" HorizontalOptions="Center" FontFamily="poppins_medium" FontAttributes="Bold" FontSize="17"/>
+                            </VerticalStackLayout>
+                        <BoxView x:Name="upperBoundaryBox" Color="Black" HeightRequest="50" WidthRequest="50" CornerRadius="50"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="10,0,10,0">
+                        <Label Text="Red" FontFamily="poppins_medium"/>
+                            <Slider x:Name="upperRedSlider" Minimum="0" Maximum="255" WidthRequest="300" DragCompleted="Slider_DragCompleted" ThumbColor="Red" MinimumTrackColor="Red"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="10,0,10,0">
+                        <Label Text="Green" FontFamily="poppins_medium"/>
+                            <Slider x:Name="upperGreenSlider" Minimum="0" Maximum="255" WidthRequest="300" DragCompleted="Slider_DragCompleted" ThumbColor="Green" MinimumTrackColor="Green"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="10,0,10,0">
+                        <Label Text="Blue" FontFamily="poppins_medium"/>
+                            <Slider x:Name="upperBlueSlider" Minimum="0" Maximum="255" WidthRequest="300" DragCompleted="Slider_DragCompleted" ThumbColor="Blue" MinimumTrackColor="Blue"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                </Border>
+                <Button x:Name="refreshBtn" HorizontalOptions="Center" Text="Refresh" Clicked="RefreshClicked" Style="{StaticResource baseButtonStyle}" HeightRequest="40" />
+                <BoxView HeightRequest="20" WidthRequest="50" Color="Transparent" Margin="10"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+    

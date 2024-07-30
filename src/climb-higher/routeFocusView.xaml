@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.RouteFocusView" BackgroundColor="{StaticResource lightColor}">
+    <ScrollView>
+        <VerticalStackLayout Padding="-10">
+        <Border Style="{StaticResource topBorder}" HeightRequest="150" Margin="0,0,0,20">
+            <VerticalStackLayout Style="{StaticResource topVertSpacing}" Padding="20,0,0,0">
+                <Label Text="Adjust Climb" Style="{StaticResource topBigText}" FontSize="30"/>
+                <Label Text="Please fill in all required** fields before submitting" Style="{StaticResource topSmallText}"/>
+            </VerticalStackLayout>
+        </Border>
+        <Entry x:Name = "grade" Placeholder="Grade**" Style="{StaticResource climbEntry}"/>
+        <Entry x:Name = "tries" Placeholder="# of Tries**" Style="{StaticResource climbEntry}"/>
+        <Entry x:Name = "color" Placeholder="Color**" Style="{StaticResource climbEntry}"/>
+        <Entry x:Name=" walltype" Placeholder="Walltype**" Style="{StaticResource climbEntry}"/>
+        <Label Text="Enter a time greater than 00:00.000:" Style="{StaticResource climbLabel}" Margin="15,10,0,0"/>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="10,10,0,0">
+            <VerticalStackLayout>
+                <HorizontalStackLayout Spacing="50" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Minutes" Style="{StaticResource climbLabel}"/>
+                    <Label Text="Seconds" Style="{StaticResource climbLabel}"/>
+                    <Label Text="Milliseconds" Style="{StaticResource climbLabel}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="65" HorizontalOptions="StartAndExpand">
+                    <Entry x:Name="entryTimeMins" Placeholder="0" Keyboard="Numeric" Margin="0" Style="{StaticResource climbEntry}"/>
+                    <Entry x:Name="entryTimeSecs" Placeholder="0" Keyboard="Numeric" Margin="0" Style="{StaticResource climbEntry}"/>
+                    <Entry x:Name="entryTimeMillisecs" Placeholder="0" Keyboard="Numeric" Margin="0" Style="{StaticResource climbEntry}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Button x:Name="addTimeBtn" Text="Add Time" Clicked="addTimeBtn_Clicked" WidthRequest="100" HeightRequest="50" Style="{StaticResource baseButtonStyle}"/>
+                        <Button x:Name="viewTimesBtn" Text="View Times" Clicked="viewTimesBtn_Clicked" WidthRequest="100" HeightRequest="50" Style="{StaticResource baseButtonStyle}"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <ListView x:Name="timeLV" HorizontalOptions="Start" VerticalScrollBarVisibility="Always" ItemTapped="timeLV_ItemTapped" IsEnabled="True" IsVisible="False" ItemsSource="{Binding timeCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding timeString}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry x:Name = "notes" Placeholder="Notes" Style="{StaticResource climbEntry}"/>
+        <Entry x:Name = "title" Placeholder="Title**" Style="{StaticResource climbEntry}"/>
+        <HorizontalStackLayout Margin="20,0,0,15" Spacing="15">
+            <Label Text="Indoor:" Style="{StaticResource climbLabel}" VerticalOptions="Center"/>
+            <Switch x:Name="indoor" VerticalOptions="Center" ThumbColor="Gray"/>
+        </HorizontalStackLayout>
+        <Button Text="Submit" Clicked="Button_Clicked" Style="{StaticResource baseButtonStyle}"/>
+        <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_Clicked" Style="{StaticResource baseButtonStyle}" BackgroundColor="Crimson" TextColor="White" Margin="10" />
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

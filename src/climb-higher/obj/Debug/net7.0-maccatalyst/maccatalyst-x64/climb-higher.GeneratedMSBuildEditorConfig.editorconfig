@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net7.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = climb_higher
+build_property.ProjectDir = /Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/CameraPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.CameraPage.xaml
+build_metadata.AdditionalFiles.TargetPath = CameraPage.xaml
+build_metadata.AdditionalFiles.RelativePath = CameraPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/climbDataEntryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.climbDataEntryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = climbDataEntryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = climbDataEntryPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/ClimbPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.ClimbPage.xaml
+build_metadata.AdditionalFiles.TargetPath = ClimbPage.xaml
+build_metadata.AdditionalFiles.RelativePath = ClimbPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/CountdownPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.CountdownPage.xaml
+build_metadata.AdditionalFiles.TargetPath = CountdownPage.xaml
+build_metadata.AdditionalFiles.RelativePath = CountdownPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/EditStopwatchTime.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.EditStopwatchTime.xaml
+build_metadata.AdditionalFiles.TargetPath = EditStopwatchTime.xaml
+build_metadata.AdditionalFiles.RelativePath = EditStopwatchTime.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/GreetingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.GreetingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = GreetingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = GreetingPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = LoginPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/PrivacyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.PrivacyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = PrivacyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = PrivacyPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/routeFocusView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.routeFocusView.xaml
+build_metadata.AdditionalFiles.TargetPath = routeFocusView.xaml
+build_metadata.AdditionalFiles.RelativePath = routeFocusView.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/SettingsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.SettingsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SettingsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SettingsPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/StatisticsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.StatisticsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = StatisticsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = StatisticsPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/StopwatchPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.StopwatchPage.xaml
+build_metadata.AdditionalFiles.TargetPath = StopwatchPage.xaml
+build_metadata.AdditionalFiles.RelativePath = StopwatchPage.xaml
+
+[/Users/harrisonbaker/Desktop/School Work/Senior Capstone/climb-higher/src/climb-higher/TrainingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = climb_higher.TrainingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = TrainingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = TrainingPage.xaml

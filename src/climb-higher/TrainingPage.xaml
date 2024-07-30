@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.TrainingPage" BackgroundColor="{StaticResource lightColor}">
+    <VerticalStackLayout Padding="-10" Style="{StaticResource vertStyle}">
+        <Border Style="{StaticResource topBorder}">
+            <VerticalStackLayout Style="{StaticResource topVertSpacing}">
+                <Label Text="Hi Climber," Style="{StaticResource topSmallText}"/>
+                <Label Text="Enter a New Climb" Style="{StaticResource topBigText}"/>
+                <Label Text="Select a type of climb to add/modify a climb, or view additional previous climbs" Style="{StaticResource topSmallText}"/>
+            </VerticalStackLayout>
+        </Border>
+        <VerticalStackLayout Padding="20" HorizontalOptions="Center" Margin="30,15,30,20">
+            <Grid RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" HeightRequest="150" Grid.Row="0" BackgroundColor="{DynamicResource triColor}">
+                    <HorizontalStackLayout Margin="20,0,0,0" Spacing="30">
+                        <Button x:Name = "boulderButton"  Text="Boulder" HeightRequest = "100" Clicked="boulderButton_Clicked" Style="{StaticResource baseButtonStyle}" WidthRequest="120" BackgroundColor="{DynamicResource secColor}"/>
+                        <VerticalStackLayout HorizontalOptions="Center" Margin="0,10,0,0" WidthRequest="200">
+                            <Label Text="Recent Climbs:" Style="{StaticResource topSmallText}" FontFamily="poppins_medium" TextColor="{DynamicResource darkColor}" HorizontalOptions="Center"/>
+                            <ListView x:Name="bRecentClimbs" ItemsSource="{Binding boulder}" WidthRequest="200" VerticalOptions="Center" ItemSelected="bRecentClimbs_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label Text="{Binding ., TargetNullValue='No Recent Climbs'}" Style="{StaticResource topSmallText}" FontFamily="poppins_thin" FontAttributes="Bold" TextColor="{StaticResource darkColor}" VerticalOptions="Center"/>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" HeightRequest="150" Grid.Row="1" BackgroundColor="{DynamicResource triColor}">
+                    <HorizontalStackLayout Margin="20,0,30,0" Spacing="30">
+                        <Button x:Name = "topRopeButton" Text="Top Rope" HeightRequest = "100" Clicked="topRopeButton_Clicked" Style="{StaticResource baseButtonStyle}" WidthRequest="120" BackgroundColor="{DynamicResource secColor}"/>
+                        <VerticalStackLayout HorizontalOptions="Center" Margin="0,10,0,0" WidthRequest="200">
+                            <Label Text="Recent Climbs:" Style="{StaticResource topSmallText}" FontFamily="poppins_medium" TextColor="{DynamicResource darkColor}" HorizontalOptions="Center"/>
+                            <ListView x:Name="trRecentClimbs" ItemsSource="{Binding toprope}" WidthRequest="200" VerticalOptions="Center" ItemSelected="trRecentClimbs_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label Text="{Binding ., TargetNullValue='No Recent Climbs'}" Style="{StaticResource topSmallText}" FontFamily="poppins_thin" FontAttributes="Bold" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" HeightRequest="150" Grid.Row="2" BackgroundColor="{DynamicResource triColor}">
+                    <HorizontalStackLayout Margin="20,0,30,0" Spacing="30">
+                        <Button x:Name = "leadButton" Text="Lead" HeightRequest = "100" Clicked="leadButton_Clicked" Style="{StaticResource baseButtonStyle}" WidthRequest="120" BackgroundColor="{DynamicResource secColor}"/>
+                        <VerticalStackLayout HorizontalOptions="Center" Margin="0,10,0,0" WidthRequest="200">
+                            <Label Text="Recent Climbs:" Style="{StaticResource topSmallText}" FontFamily="poppins_medium" TextColor="{DynamicResource darkColor}" HorizontalOptions="Center"/>
+                            <ListView x:Name="lRecentClimbs" ItemsSource="{Binding lead, TargetNullValue='No Recent Climbs'}" WidthRequest="200" VerticalOptions="Center" ItemSelected="lRecentClimbs_ItemSelected" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label Text="{Binding ., TargetNullValue='No Recent Climbs'}" Style="{StaticResource topSmallText}" FontFamily="poppins_thin" FontAttributes="Bold" TextColor="{DynamicResource darkColor}" VerticalOptions="Center"/>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

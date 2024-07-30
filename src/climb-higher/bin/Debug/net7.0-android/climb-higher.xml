@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>climb-higher</name>
+    </assembly>
+    <members>
+        <member name="M:climb_higher.CameraPage.#ctor">
+            <summary>
+            Camera Page Function
+            </summary>
+        </member>
+        <member name="M:climb_higher.CameraPage.OnAppearing">
+            <summary>
+            When the page is opened we do these things.
+            </summary>
+        </member>
+        <member name="M:climb_higher.CameraPage.OnDisappearing">
+            <summary>
+            Handles operations upon page being popped from navigation stack.
+            </summary>
+        </member>
+        <member name="M:climb_higher.CameraPage.Camera_Button_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Allows the user to take a picture on the camera page for the
+            CV operations.
+            </summary>
+            <param name="sender">Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.CameraPage.Pick_Button_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Opens the user's gallery to select an image to use for cv operations.
+            </summary>
+            <param name="sender"> The object responsible for the event.</param>
+            <param name="e">The eventargs for the event.</param>
+        </member>
+        <member name="M:climb_higher.CameraPage.OnImgTap(System.Object,Microsoft.Maui.Controls.TappedEventArgs)">
+            <summary>
+            onImgTap() allows user to tap on the image and get the color based on 
+            where the user tapped
+            </summary>
+            <param name="sender"> sender in this case is the image </param>
+            <param name="e"> e in this case is the tap position </param> 
+        </member>
+        <member name="M:climb_higher.CameraPage.PerformCVOperations(Emgu.CV.Structure.Hsv,Emgu.CV.Structure.Hsv)">
+            <summary>
+            Replaces the current photo object with a marked-up version with rectangles around objects within the given
+            Hsv range
+            </summary>
+            <param name="lowerColorLimit">Hsv value representing the lower bound of the color range</param>
+            <param name="upperColorLimit">Hsv value representing the upper bound of the color range</param>
+        </member>
+        <member name="M:climb_higher.CameraPage.Slider_DragCompleted(System.Object,System.EventArgs)">
+            <summary>
+            Executes when one of the sliders on the CameraPage is finished being dragged and updates the internal
+            values for the lower and upper hue, saturation and value.
+            </summary>
+            <param name="sender">The object from which the event originated</param>
+            <param name="e">The EventArgs for the event</param>
+        </member>
+        <member name="M:climb_higher.CameraPage.RefreshClicked(System.Object,System.EventArgs)">
+            <summary>
+            Executes when the refresh button is clicked. Updates the image based on the values of the
+            sliders on the CameraPage
+            </summary>
+            <param name = "sender" > The object from which the event originated</param>
+            <param name="e">The EventArgs for the event</param>
+        </member>
+        <member name="M:climb_higher.CameraPage.UpdateBoxViewsFromSliders">
+            <summary>
+            Updates the color of the BoxViews from the values of the sliders on the CameraPage
+            </summary>
+        </member>
+        <member name="M:climb_higher.CameraPage.CalculateAverageColor(Microsoft.Maui.Graphics.Color,Microsoft.Maui.Graphics.Color)">
+            <summary>
+            Computes the average color based on the two given Colors.
+            </summary>
+            <param name="color1">One of two color inputs.</param>
+            <param name="color2">One of two color inputs.</param>
+            <returns>An average of the two given Color objects.</returns>
+        </member>
+        <member name="M:climb_higher.CameraPage.UpdateImage">
+            <summary>
+            Updates the rectangles on the image from the values of the sliders on the CameraPage
+            </summary>
+        </member>
+        <member name="M:climb_higher.CameraPage.UpdateProperties">
+            <summary>
+            Updates the RGB properties based on the values of the sliders.
+            </summary>
+        </member>
+        <member name="M:climb_higher.CameraPage.PinchUpdated(System.Object,Microsoft.Maui.Controls.PinchGestureUpdatedEventArgs)">
+            <summary>
+            Handles the math for zoom feature. Deals with change in x and y
+            keeps target coordinates and handles content translation.
+            </summary>
+            <param name="sender"> Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.ClimbData.findBestTime">
+            <summary>
+            findBestTime() finds the best time of a climb
+            </summary>
+            <returns> The best time of a climb </returns>
+        </member>
+        <member name="M:climb_higher.ClimbData.findAvgTime">
+            <summary>
+            findAvgTime() finds the avg time of a climb
+            </summary>
+            <returns>The average time of a climb </returns>
+        </member>
+        <member name="M:climb_higher.ClimbData.findWorstTime">
+            <summary>
+            findWorstTime() finds the worst time of a climb
+            </summary>
+            <returns> The worst time of a climb </returns>
+        </member>
+        <member name="M:climb_higher.climbDataEntryPage.CreateConnection">
+            <summary>
+            Function used to connect to the database. This is required in every page
+            that makes any use of the database.
+            </summary>
+        </member>
+        <member name="M:climb_higher.climbDataEntryPage.#ctor(System.String)">
+            <summary>
+            climbDataEntryPage main function.
+            </summary>
+            <param name="climbType">Used to tell which button the user cliced on the
+            TrainingPage</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:climb_higher.climbDataEntryPage.Button_Clicked(System.Object,System.EventArgs)" -->
+        <member name="M:climb_higher.ClimbPage.CreateConnection">
+            <summary>
+            Function used to connect to the database. This is required in every page
+            that makes any use of the database.
+            </summary>
+        </member>
+        <member name="M:climb_higher.ClimbPage.#ctor(System.String)">
+            <summary>
+            ClimbPage main function.
+            </summary>
+            <param name="climbType">Determines which list to load. We check this to
+            know which button the user clicked on TrainingPage</param>
+        </member>
+        <member name="M:climb_higher.ClimbPage.OnAppearing">
+            <summary>
+            On the page appearing we show a list of climbs of the discipline selected.
+            We check climbType to see which button the user selected.
+            </summary>
+        </member>
+        <member name="M:climb_higher.ClimbPage.newClimbButton_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Brings the user to the entryPage, where they can enter a new route.
+            </summary>
+            <param name="sender">The object responsible for the event.</param>
+            <param name="e">Event args for this event.</param>
+        </member>
+        <member name="M:climb_higher.ComputerVision.PerformAnalysis(System.String,Emgu.CV.Structure.Hsv,Emgu.CV.Structure.Hsv)">
+            <summary>
+            Given an input image and a color range, this method identifies objects within that color
+            range and returns a marked-up image with rectangles around instances of that color.
+            </summary>
+            <param name="pathToInputImage">File path to the input image</param>
+            <param name="lowerColorLimit">The Hsv value representing the lower bound of the color range</param>
+            <param name="upperColorLimit">The Hsv value representing the upper bound of the color range</param>
+            <returns>A base64 string representation of the input image with blue rectangles
+            surrounding objects within the given color range</returns>
+        </member>
+        <member name="M:climb_higher.ComputerVision.DrawRectangleOnImage(System.Drawing.Rectangle,Emgu.CV.Image{Emgu.CV.Structure.Hsv,System.Byte},Emgu.CV.Structure.Hsv,System.Int32)">
+            <summary>
+            Draws a rectangle on the given image.
+            </summary>
+            <param name="rect">The rectangle to draw</param>
+            <param name="image">The image to draw the rectangle on</param>
+            <param name="color">The color of the rectangle</param>
+            <param name="thickness">The thickness of the rectangle's lines</param>
+        </member>
+        <member name="M:climb_higher.ComputerVision.ComputeColorRanges(Emgu.CV.Structure.Bgr)">
+            <summary>
+            Computes the lower and upper HSV color bounds for a color range based on the given BGR color
+            </summary>
+            <param name="bgrColor">A BGR color to find the HSV range of</param>
+            <returns>An array of Hsv values where the first item is
+            the lower bound and the second item is the upper bound</returns>
+        </member>
+        <member name="M:climb_higher.ComputerVision.HsvToColor(Emgu.CV.Structure.Hsv)">
+            <summary>
+            Converts a Hsv value into .NET MAUI's representation of a color
+            </summary>
+            <param name="hsvVal">The Hsv value to convert into a MAUI color</param>
+            <returns>A MAUI specific color equivalent to the given Hsv value</returns>
+        </member>
+        <member name="M:climb_higher.ComputerVision.BgrToHsv(Emgu.CV.Structure.Bgr)">
+            <summary>
+            Converts a Bgr value into a Hsv value.
+            </summary>
+            <param name="bgrInput">The Bgr value to convert.</param>
+            <returns>Returns a Hsv representation of the Bgr value.</returns>
+        </member>
+        <member name="T:climb_higher.CountdownPage">
+            <summary>
+            CountdownPage represents the page that counts down
+            </summary>
+        </member>
+        <member name="M:climb_higher.CountdownPage.#ctor(System.Int32)">
+            <summary>
+            CountdownPage() allows other pages to open this page
+            </summary>
+            <param name="cntDwn"></param>
+        </member>
+        <member name="M:climb_higher.CountdownPage.goBack">
+            <summary>
+            goBack() pushes the user back to the StopwatchPage
+            </summary>
+        </member>
+        <member name="T:climb_higher.EditStopwatchTime">
+            <summary>
+            EditStopwatchTime is a class that represents the page that pops up to edit
+            an instance of a time
+            </summary>
+        </member>
+        <member name="M:climb_higher.EditStopwatchTime.CreateConn">
+            <summary>
+            CreateConn() sets up the SQLite connection for the database of times
+            </summary>
+        </member>
+        <member name="M:climb_higher.EditStopwatchTime.CreateConnClimbData">
+            <summary>
+            CreateConnClimbData() sets up SQLite connection for database of climbs
+            </summary>
+        </member>
+        <member name="M:climb_higher.EditStopwatchTime.#ctor(climb_higher.Time,System.String,climb_higher.ClimbData)">
+            <summary>
+            EditStopWatchTime() allows us to create the page from the previous page
+            </summary>
+            <param name="t"> represents the time user might edit </param> 
+            <param name="prevPage"> represents the previous page user was on </param>
+            <param name="data"> represents data which holds time user may edit </param>
+        </member>
+        <member name="M:climb_higher.EditStopwatchTime.SaveEdit_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            SaveEdit_Clicked() is run when the user clicks SaveEdit button
+            It saves the new time in place of the old time
+            </summary>
+            <param name="sender"> object based on button </param> 
+            <param name="e"> event data from button click </param> 
+        </member>
+        <member name="M:climb_higher.EditStopwatchTime.Delete_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Delete_Clicked() deletes the time that was selected from the database
+            </summary>
+            <param name="sender"> object based on button </param>
+            <param name="e"> event data from button </param> 
+        </member>
+        <member name="M:climb_higher.GreetingPage.#ctor(System.String)">
+            <summary>
+            GreetingPage main page.
+            </summary>
+            <param name="userName">Can be used for implementing userName/login feature
+            in the future. But right now it's kind of useless.</param>
+        </member>
+        <member name="M:climb_higher.GreetingPage.cameraButton_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Takes user to Camera Page.
+            </summary>
+            <param name="sender">Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.GreetingPage.trainingButton_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Takes user to Training Page.
+            </summary>
+            <param name="sender">Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.GreetingPage.stopwatchButton_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Takes user to Stopwatch Page.
+            </summary>
+            <param name="sender">Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.GreetingPage.settingsButton_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Takes user to Settings Page.
+            </summary>
+            <param name="sender">Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.LoginPage.CreateConnection">
+            <summary>
+            Function used to connect to the database. This is required in every page
+            that makes any use of the database.
+            </summary>
+        </member>
+        <member name="M:climb_higher.LoginPage.#ctor">
+            <summary>
+            LoginPage main page.
+            </summary>
+        </member>
+        <member name="M:climb_higher.LoginPage.login_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Sends user to the home page. outdated name.
+            </summary>
+            <param name="sender">Object responsible for the events.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="M:climb_higher.LoginPage.OnAppearing">
+            <summary>
+            Shows the list of most recently logged routes. Lists by descending ID #.
+            </summary>
+        </member>
+        <member name="M:climb_higher.LoginPage.recentClimbs_ItemSelected(System.Object,Microsoft.Maui.Controls.SelectedItemChangedEventArgs)">
+            <summary>
+            If a user selects one of the routes from the list it sends them to the
+            routeFocusView Page so they can edit/delete the record.
+            </summary>
+            <param name="sender">Object responsible for the event.</param>
+            <param name="e">Eventargs for this event.</param>
+        </member>
+        <member name="T:climb_higher.RouteFocusView">
+            <summary>
+            RouteFocusView represents the page that comes up when going to edit a climb
+            </summary>
+        </member>
+        <member name="M:climb_higher.RouteFocusView.addTimeBtn_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            addTimeBtn_Clicked() allows the user to add a time to the climb
+            </summary>
+            <param name="sender"> Object from add time button </param>
+            <param name="e"> Event from add time button </param>
+        </member>
+        <member name="M:climb_higher.RouteFocusView.viewTimesBtn_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            viewTimesBtn_Clicked() allows the user to hide and reveal the times
+            within a climb, as if there are a lot it can be a lot to scroll through
+            </summary>
+            <param name="sender"> Object from view times button </param>
+            <param name="e">Event from view times button </param>
+        </member>
+        <member name="M:climb_higher.RouteFocusView.timeLV_ItemTapped(System.Object,Microsoft.Maui.Controls.ItemTappedEventArgs)">
+            <summary>
+            timeLV_ItemTapped() allows the user to tap on a time in the listview
+            and then edit that time in the EditStopwatchTime page
+            </summary>
+            <param name="sender"> Object (listview) from listview item click</param>
+            <param name="e"> ItemTapped (time) from listview item click</param>
+        </member>
+        <member name="M:climb_higher.RouteFocusView.updateListView">
+            <summary>
+            updateListView() is a method to update the listview of times
+            </summary>
+        </member>
+        <member name="M:climb_higher.RouteFocusView.OnAppearing">
+            <summary>
+            Overriding OnAppearing() to make sure when page appears, everything is
+            displayed correctly
+            </summary>
+        </member>
+        <member name="M:climb_higher.RouteFocusView.DelBtn_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            DelBtn_Clicked() is the method behind the delete button which allows
+            the user to delete the selected climb from the database.
+            May be important to note that the database IDs for climbs are used,
+            so when a new climb is made, the deleted ID is not reused, it keeps
+            incrementing, which could mean very large IDs after a while.
+            </summary>
+            <param name="sender"> Object from Delete button</param>
+            <param name="e"> Event from Delete Button</param>
+        </member>
+        <member name="T:climb_higher.StatisticsPage">
+            <summary>
+            StatisticsPage represents the page when user taps statistics in nav bar
+            </summary>
+        </member>
+        <member name="M:climb_higher.StatisticsPage.CreateConnection">
+            <summary>
+            CreateConnection() creates the connection to the climb data database
+            </summary>
+        </member>
+        <member name="M:climb_higher.StatisticsPage.#ctor">
+            <summary>
+            StatisticsPage() allows this page to be created by another page
+            </summary>
+        </member>
+        <member name="M:climb_higher.StatisticsPage.OnAppearing">
+            <summary>
+            Overriding OnAppearing() to set up entire page with content
+            </summary>
+        </member>
+        <member name="T:climb_higher.StopwatchPage">
+            <summary>
+            StopwatchPage represents that page that opens we the timer icon in the
+            navigation bar is tapped. Allows user to time themself.
+            </summary>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.CreateConn">
+            <summary>
+            CreateConn() creates the connection to the database of times
+            </summary>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.#ctor">
+            <summary>
+            StopwatchPage() allows us to create the page from other pages
+            </summary>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.Start_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Start_Clicked() starts the stopwatch, unless we have a countdown
+            in which case that occurs first, then this method follows.
+            </summary>
+            <param name="sender"> arbitrary object from button </param>
+            <param name="e"> event from button </param>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.stop">
+            <summary>
+            stop() is called when we want to stop the stopwatch from counting.
+            </summary>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.OnAppearing">
+            <summary>
+            Overriding the OnAppearing() method to also update listview
+            </summary>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.timeLV_ItemTapped(System.Object,Microsoft.Maui.Controls.ItemTappedEventArgs)">
+            <summary>
+            When a time in the listview it tapped we open the page to edit times
+            </summary>
+            <param name="sender"> Object that represents anything sent with button </param>
+            <param name="e"> Event arguments coming from tapped item </param>
+        </member>
+        <member name="M:climb_higher.StopwatchPage.CntdwnPicker_Focused(System.Object,Microsoft.Maui.Controls.FocusEventArgs)">
+            <summary>
+            Changes "Countdown" to "Seconds" to give user a better idea of countdown
+            </summary>
+            <param name="sender"> Object sent with button click </param>
+            <param name="e"> Event arguments comi g from button </param>
+        </member>
+        <member name="T:climb_higher.Time">
+            <summary>
+            Object to represent time that gets put in a database of times
+            Likely would have been better to just use TimeSpan, although
+            TimeSpan is a bit mroe difficult to get the hang of at first,
+            but these time objects can be converted to a TimeSpan.
+            </summary>
+        </member>
+    </members>
+</doc>

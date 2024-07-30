@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="climb-higher.app/Contents/MacOS/climb-higher">
+      <BCSymbolMapName>climb-higher.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>climb-higher.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/harrisonbaker/Desktop/climb-higher/src/climb-higher/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>climb-higher.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/harrisonbaker/Desktop/climb-higher/src/climb-higher</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

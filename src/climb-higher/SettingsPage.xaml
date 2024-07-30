@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.SettingsPage" BackgroundColor="{StaticResource lightColor}">
+    <VerticalStackLayout Padding="-10">
+        <Border Style="{StaticResource topBorder}" HeightRequest="150">
+            <VerticalStackLayout Style="{StaticResource topVertSpacing}">
+                <Label Text="Settings" Style="{StaticResource topBigText}"/>
+                <Label Text="Change your color theme and view the privacy notice" Style="{StaticResource topSmallText}"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <Grid Margin="10,40,10,0" RowSpacing="20" HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+            </Grid.ColumnDefinitions>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="YellowBlue" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="YellowBlue_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource yellowColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource blueColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Yellow/Blue" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="TanTurquoise" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TanTurquoise_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource tanColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource turquoiseColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Tan/Turquoise" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="OrangePurple" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrangePurple_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource orangeColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource purpleColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Orange/Purple" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="GreenPurple" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GreenPurple_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource greenColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource purpleColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Green/Purple" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="BlueRed" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BlueRed_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource blueColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource redColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Blue/Red" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="BluePink" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BluePink_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource blueColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource pinkColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Blue/Pink" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="YellowPink" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="YellowPink_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource yellowColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource pinkColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Yellow/Pink" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border HeightRequest="120" WidthRequest="120" Style="{StaticResource statLabels}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" BackgroundColor="{DynamicResource triColor}">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout x:Name="BrownBlue" HorizontalOptions="Center" Spacing="-15">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BrownBlue_Tapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Ellipse Fill="{StaticResource brownColor}" WidthRequest="50" HeightRequest="50"/>
+                        <Ellipse Fill="{StaticResource blueColor}" WidthRequest="50" HeightRequest="50"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Brown/Blue" Style="{StaticResource topSmallText}" TextColor="{StaticResource darkColor}" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <HorizontalStackLayout x:Name="Default" HorizontalOptions="Center" Spacing="-15" Grid.Row="2" Grid.Column="2">
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Default_Tapped"/>
+                </HorizontalStackLayout.GestureRecognizers>
+                <Label Text="Default" Style="{StaticResource topSmallText}" TextColor="{DynamicResource tempTri}"  FontSize="20" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <Button Text="Privacy Notice" Style="{StaticResource baseButtonStyle}" Clicked="PrivacyButtonClicked" Margin="30"/>
+    </VerticalStackLayout>
+</ContentPage>

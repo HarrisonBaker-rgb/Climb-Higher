@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.StopwatchPage" BackgroundColor="{StaticResource lightColor}">
+    <VerticalStackLayout Padding="-10">
+        <Border Style="{StaticResource topBorder}" HeightRequest="200">
+            <VerticalStackLayout Padding="20" VerticalOptions="Center" Margin="20">
+                <Label Text="Track Your Climb!" Style="{StaticResource topBigText}"/>
+                <Label Text="Start timer immediately or start a timer using the countdown selection below" Style="{StaticResource topSmallText}"/>
+            </VerticalStackLayout>
+        </Border>
+        <Grid HeightRequest="75" HorizontalOptions="Center" Margin="0,30,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="minsLab" VerticalOptions="Center" HorizontalOptions="Center" Text="00:" Grid.Column="0" FontSize="60" Style="{StaticResource climbLabel}"/>
+            <Label x:Name="secsLab" VerticalOptions="Center" HorizontalOptions="Center" Text="00." Grid.Column="1" FontSize="60" Style="{StaticResource climbLabel}"/>
+            <Label x:Name="millisecsLab" VerticalOptions="Center" HorizontalOptions="Center" Text="00" Grid.Column="2" FontSize="60" Style="{StaticResource climbLabel}"/>
+        </Grid>
+
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10" Margin="0,10,0,30">
+            <Button x:Name="Start" Text="Start" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="Start_Clicked" FontSize="17" WidthRequest="80" HeightRequest="50" Style="{StaticResource baseButtonStyle}" Padding="0"/>
+            <Border HorizontalOptions="Center" WidthRequest="150" Style="{StaticResource borderShadow}" BackgroundColor="{DynamicResource secColor}">
+                <Picker Title="Countdown" FontFamily="poppins_medium" FontSize="17" TextColor="{DynamicResource tempQuad}" TitleColor="{DynamicResource tempQuad}" x:Name="CntdwnPicker" SelectedItem="0" SelectedIndex="0" Focused="CntdwnPicker_Focused" HorizontalOptions="Center" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>0</x:String>
+                            <x:String>5</x:String>
+                            <x:String>10</x:String>
+                            <x:String>15</x:String>
+                            <x:String>20</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Border>
+        </HorizontalStackLayout>
+        <ListView x:Name="timeLV" HorizontalOptions="Center" VerticalScrollBarVisibility="Always" ItemTapped="timeLV_ItemTapped" Margin="20,0,20,0" VerticalOptions="Center" SeparatorColor="Transparent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Border Style="{StaticResource statLabels}"  BackgroundColor="{DynamicResource triColor}" HeightRequest="40" WidthRequest="360" HorizontalOptions="Center">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding timeString}" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" FontFamily="poppins_thin" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        </HorizontalStackLayout>
+                        </Border>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        
+    </VerticalStackLayout>
+</ContentPage>

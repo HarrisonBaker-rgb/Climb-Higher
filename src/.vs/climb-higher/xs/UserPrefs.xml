@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{15560C30-4C00-46B2-AAF2-4B9CB6669904}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_31" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="climb-higher/CameraPage.xaml.cs">
+    <Files>
+      <File FileName="climb-higher/CameraPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="climb-higher/CameraPage.xaml" Line="58" Column="21" />
+      <File FileName="climb-higher/LoginPage.xaml" />
+      <File FileName="climb-higher/LoginPage.xaml.cs" />
+      <File FileName="climb-higher/StatisticsPage.xaml.cs" />
+      <File FileName="climb-higher/SettingsPage.xaml" />
+      <File FileName="climb-higher/StatisticsPage.xaml" />
+      <File FileName="climb-higher/ClimbPage.xaml" />
+      <File FileName="climb-higher/ClimbPage.xaml.cs" />
+      <File FileName="climb-higher/Time.cs" />
+      <File FileName="climb-higher/StopwatchPage.xaml" />
+      <File FileName="climb-higher/MauiProgram.cs" />
+      <File FileName="climb-higher/routeFocusView.xaml" />
+      <File FileName="climb-higher/GreetingPage.xaml" />
+      <File FileName="climb-higher/Platforms/Android/AndroidManifest.xml" />
+      <File FileName="climb-higher/EditStopwatchTime.xaml" />
+      <File FileName="climb-higher/CountdownPage.xaml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="climb-higher" expanded="True">
+            <Node name="climb-higher" expanded="True">
+              <Node name="CameraPage.xaml" expanded="True">
+                <Node name="CameraPage.xaml.cs" selected="True" />
+              </Node>
+              <Node name="LoginPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.climb-higher PreferredExecutionTarget="Android.pixel_5_-_api_31" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.95" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

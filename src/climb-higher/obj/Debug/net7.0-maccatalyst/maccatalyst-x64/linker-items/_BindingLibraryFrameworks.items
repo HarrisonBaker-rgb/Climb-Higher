@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_BindingLibraryFrameworks Include="Foundation">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="Accelerate">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="CoreFoundation">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="CoreGraphics">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="AssetsLibrary">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="AVFoundation">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="CoreImage">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="CoreMedia">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="CoreVideo">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="QuartzCore">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="ImageIO">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="UIKit">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+    <_BindingLibraryFrameworks Include="CoreText">
+      <Assembly>Emgu.CV.Platform.Maui.Mac</Assembly>
+    </_BindingLibraryFrameworks>
+  </ItemGroup>
+</Project>

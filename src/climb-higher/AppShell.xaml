@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="climb_higher.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:climb_higher"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar Route="LoginPage">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
+    </TabBar>
+    <TabBar Route="HomePage">
+        <Tab Title="Camera" Icon="camera.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:CameraPage}"/>
+        </Tab>
+        <Tab Title="Climbs" Icon="rock_climbing.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:TrainingPage}"/>
+        </Tab>
+        <Tab Title="Timer" Icon="timer.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:StopwatchPage}"/>
+        </Tab>
+        <Tab Title="Statistics" Icon="stats.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:StatisticsPage}"/>
+        </Tab>
+        <Tab Title="Settings" Icon="setting.svg" >
+            <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>
+        </Tab>
+    </TabBar>
+</Shell>

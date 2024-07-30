@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.ClimbPage" BackgroundColor="{StaticResource lightColor}">
+    <VerticalStackLayout Padding="0,-10,0,0" Spacing="0">
+        <VerticalStackLayout>
+            <Border Style="{StaticResource topBorder}" HeightRequest="150">
+                <VerticalStackLayout Style="{StaticResource topVertSpacing}">
+                    <Label Text="Welcome back to... " Style="{StaticResource topSmallText}"/>
+                    <Label x:Name="theLabel" Text="Training Page" Style="{StaticResource topBigText}"/>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+        <Button x:Name = "newClimbButton"  Text="Record New Climb" Clicked="newClimbButton_Clicked" Style="{StaticResource baseButtonStyle}" WidthRequest="200" HeightRequest="50" Margin="0,30,0,30" BorderWidth="0"/>
+        <Border Style="{StaticResource statLabels}" HorizontalOptions="Center" WidthRequest="380" HeightRequest="500" BackgroundColor="{DynamicResource triColor}">
+            <VerticalStackLayout>
+
+        
+        <Label Text="Select climb to modify or view:" Style="{StaticResource topSmallText}" TextColor="{DynamicResource darkColor}" Margin="20,20,20,10"/>
+        <ListView x:Name="finishedClimbLV" Style="{StaticResource statList}" ItemsSource="{Binding routes}" WidthRequest="360" Margin="20,0,20,0" VerticalOptions="Center" SeparatorColor="Transparent" ItemSelected="finishedClimbLV_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Border Style="{StaticResource statLabels}" BackgroundColor="{DynamicResource lightColor}" HeightRequest="40" WidthRequest="360">
+                        <Label Text="{Binding .}" Style="{StaticResource topSmallText}" FontFamily="poppins_medium" TextColor="{DynamicResource tempQuad}" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        </Border>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,157 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:climb_higher"
+             x:Class="climb_higher.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Shadow Brush="#000000"
+                    x:Key="Shadow"
+                    Radius="10"
+                    Opacity="1"/>
+            <Color x:Key="textColor">#000000</Color>
+
+            <Color x:Key="lightColor">#FEFBF6</Color>
+            <Color x:Key="darkColor">#000000</Color>
+
+            <Color x:Key="priColor">#74E291</Color>
+            <Color x:Key="secColor">#CCF2D1</Color>
+            <Color x:Key="triColor">#f1eee8</Color>
+            <Color x:Key="tempTri">#f1eee8</Color>
+            <Color x:Key="quadColor">#f1eee8</Color>
+            <Color x:Key="tempQuad">#000000</Color>
+
+            <!--YELLOW/BLUE-->
+            <Color x:Key="yellowColor">#fdb338</Color>
+            <Color x:Key="blueColor">#025196</Color>
+            <Color x:Key="lightBlueColor">#D0DCE5</Color>
+            <Color x:Key="lightYellowColor">#FEEED3</Color>
+
+            <!--TAN/TURQUOISE-->
+            <Color x:Key="tanColor">#ffbe6a</Color>
+            <Color x:Key="turquoiseColor">#40b0a7</Color>
+            <Color x:Key="lightTurquoiseColor">#DBEDE8</Color>
+            <Color x:Key="lightTanColor">#FEF0DD</Color>
+
+            <!--ORANGE/PURPLE-->
+            <Color x:Key="orangeColor">#eb6123</Color>
+            <Color x:Key="purpleColor">#522888</Color>
+            <Color x:Key="lightPurpleColor">#DFD5E2</Color>
+            <Color x:Key="lightOrangeColor">#FBDFD0</Color>
+
+            <!--BLUE/RED-->
+            <Color x:Key="redColor">#bf2c23</Color>
+            <Color x:Key="lightRedColor">#F3D5D0</Color>
+            <Color x:Key="quadBRColor">#D0DCE5</Color>
+
+            <!--GREEN/PURPLE-->
+            <Color x:Key="greenColor">#295e11</Color>
+            <Color x:Key="lightGreenColor">#EBEDE1</Color>
+            <Color x:Key="quadGPColor">#DFD5E2</Color>
+
+            <!--BLUE/PINK-->
+            <Color x:Key="pinkColor">#db4c77</Color>
+            <Color x:Key="lightPinkColor">#F8DBDF</Color>
+            <Color x:Key="quadBPColor">#D0DCE5</Color>
+
+            <!--BROWN/BLUE-->
+            <Color x:Key="brownColor">#6a4a3c</Color>
+            <Color x:Key="lightBrownColor">#E3DBD4</Color>
+
+            <x:Double x:Key="borderSize">0</x:Double>
+            <Style x:Key="baseButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource secColor}"/>
+                <Setter Property="TextColor" Value="{DynamicResource tempQuad}"/>
+                <Setter Property="FontFamily" Value="poppins_medium"/>
+                <Setter Property="BorderColor" Value="{DynamicResource tempQuad}"/>
+                <Setter Property="BorderWidth" Value="0"/>
+                <Setter Property="Shadow" Value="{StaticResource Shadow}"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style x:Key="imageButtonStyle" TargetType="ImageButton">
+                <Setter Property="Shadow" Value="{StaticResource Shadow}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource darkColor}"/>
+            </Style>
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="Shadow" Value="{StaticResource Shadow}"/>
+            </Style>
+            <Style x:Key="vertStyle" TargetType="VerticalStackLayout">
+                <Setter Property="BackgroundColor" Value="{DynamicResource lightColor}"/>
+            </Style>
+            <RoundRectangle x:Key="butRect"
+                            CornerRadius="10,10,10,10"/>
+            <Style x:Key="borderShadow" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="{DynamicResource lightColor}"/>
+                <Setter Property="Shadow" Value="{StaticResource Shadow}"/>
+                <Setter Property="StrokeShape" Value="{StaticResource butRect}"/>
+            </Style>
+            <RoundRectangle x:Key="rect"
+                            CornerRadius="0,0,40,40"/>
+            <RoundRectangle x:Key="statRect"
+                            CornerRadius="10,10,10,10"/>
+            <Style x:Key="topBorder" TargetType="Border">
+                <Setter Property="HeightRequest" Value="200"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource priColor}"/>
+                <Setter Property="WidthRequest" Value="400"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="StrokeShape" Value="{StaticResource rect}"/>
+                <Setter Property="StrokeThickness" Value="0"/>
+            </Style>
+            <Style x:Key="topBigText" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontFamily" Value="poppins_bold"/>
+                <Setter Property="TextColor" Value="{DynamicResource tempTri}"/>
+            </Style>
+            <Style x:Key="topSmallText" TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontFamily" Value="poppins_medium"/>
+                <Setter Property="TextColor" Value="{DynamicResource tempTri}"/>
+            </Style>
+            <Style x:Key="topVertSpacing" TargetType="VerticalStackLayout">
+                <Setter Property="Padding" Value="20,10,10,0"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="20"/>
+            </Style>
+            <Style x:Key="statLabels" TargetType="Border">
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource priColor}"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="StrokeShape" Value="{StaticResource statRect}"/>
+                <Setter Property="StrokeThickness" Value="0"/>
+            </Style>
+            <Style x:Key="climbEntry" TargetType="Entry">
+                <Setter Property="Margin" Value="20,0,20,0"/>
+                <Setter Property="FontFamily" Value="poppins_thin"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style x:Key="climbLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="poppins_thin"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="{DynamicResource darkColor}"/>
+            </Style>
+            <Style x:Key="privacyLabel" TargetType="Label" BasedOn="{StaticResource climbLabel}">
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+            <Style x:Key="statList" TargetType="ListView">
+                <Setter Property="VerticalScrollBarVisibility" Value="Always"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="-25,0,0,0"/>
+                <Setter Property="WidthRequest" Value="150"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+

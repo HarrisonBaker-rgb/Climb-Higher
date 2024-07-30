@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="climb_higher.LoginPage" BackgroundColor="{DynamicResource priColor}">
+
+    
+        <VerticalStackLayout
+            Spacing="0"
+            Padding="30"
+            VerticalOptions="Center">
+            <Label
+                FontSize="46"
+                FontFamily="poppins_bold"
+                TextColor="{DynamicResource lightColor}"
+                HorizontalOptions="Center"
+                x:Name="loginPageLabel"/>
+            <Label Text=" " FontSize="10"/>
+            <Border Padding="20,10,20,10" BackgroundColor="{StaticResource lightColor}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20,20,20,20"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="10" Padding="10">
+                    <!--<Label Text="Log in using your unique username and password to continue:" FontFamily="poppins_medium" FontSize="15"/>-->
+                    <!--<Label Text=" " FontSize="10"/>-->
+                    <Label Text="Recent Climbs" HorizontalTextAlignment="Center" FontSize="20" FontFamily="poppins_thin" FontAttributes="Bold" TextColor="{DynamicResource darkColor}"/>
+                    <ListView x:Name="recentClimbsLV" Style="{StaticResource statList}" ItemsSource="{Binding routes}" WidthRequest="360" Margin="20,0,20,0" VerticalOptions="Center" SeparatorColor="Transparent" ItemSelected="recentClimbs_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Border Style="{StaticResource statLabels}" BackgroundColor="{DynamicResource lightColor}" HeightRequest="40" WidthRequest="360">
+                                    <Label Text="{Binding .}"  HorizontalTextAlignment="Center" Style="{StaticResource topSmallText}" FontFamily="poppins_medium" TextColor="{DynamicResource tempQuad}" VerticalOptions="Center" Margin="10,0,0,0"/>
+                                    </Border>
+                        
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button
+                        x:Name="login" Text="Get Started!"
+                        HorizontalOptions="Center"
+                        HeightRequest="50"
+                        WidthRequest="200"
+                        Clicked="login_Clicked" Style="{StaticResource baseButtonStyle}"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    
+
+</ContentPage>
+
